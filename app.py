@@ -32,14 +32,14 @@ def get_text_chunks(text):
 
 
 def get_vectorstore(text_chunks):
-    embeddings = OpenAIEmbeddings(api_key='sk-proj-cb6dtiPOqbdCToF7uIXyT3BlbkFJ3mevSk4wJ9aRm01uJcY8')
+    embeddings = OpenAIEmbeddings(api_key='sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
     # embeddings = HuggingFaceInstructEmbeddings(model_name="hkunlp/instructor-xl")
     vectorstore = FAISS.from_texts(texts=text_chunks, embedding=embeddings)
     return vectorstore
 
 
 def get_conversation_chain(vectorstore):
-    llm = ChatOpenAI(api_key='sk-proj-cb6dtiPOqbdCToF7uIXyT3BlbkFJ3mevSk4wJ9aRm01uJcY8')
+    llm = ChatOpenAI(api_key='sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
     # llm = HuggingFaceHub(repo_id="google/flan-t5-xxl", model_kwargs={"temperature":0.5, "max_length":512})
 
     memory = ConversationBufferMemory(
